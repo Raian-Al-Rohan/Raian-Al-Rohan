@@ -1,0 +1,41 @@
+def add(num1,num2) :
+    a = str(num1)[-1]
+    b = str(num1)[-2]
+    x = str(num2)[-1]
+    y = str(num2)[-2]
+    a = int(a)
+    b = int(b)
+    x = int(x)
+    y = int(y)
+    ans1 = 0
+    ans2 = 0
+    ans3 = 0
+
+    if (a + x) >= 10 :
+        ans1 = (a + x) - 10
+        left = True
+    else :
+        ans1 = a + x
+        left = False
+        
+
+
+    if left == True and (b + y + 1) < 10 :
+        ans2 = (b + y + 1)
+        ans3 = 0
+    elif left == False and (b + y) < 10 :
+        ans2 = (b + y)
+        ans3 = 0
+    elif left == False and (b + y) >= 10 :
+        ans2 = (b + y) - 10
+        ans3 = 1
+    elif left == True and (b + y + 1) >= 10 :
+        ans2 = (b + y + 1) - 10
+        ans3 = 1
+    ans1 = ans1*1
+    ans2 = ans2*10
+    ans3 = ans3*100
+        
+    print(ans1 + ans2 + ans3)
+
+add(23,67)
